@@ -25,15 +25,37 @@ router.post("/newbook", async (req, res) => {
 });
 
 //Update book
+// router.put("/book/:bookId", async (req, res) => {
+//   const book = await Book.findByIdAndUpdate(req.params.bookId, req.body, {
+//     new: true,
+//   }); //mongoose function
+//   if (book) {
+//     res.json({ message: "Book updated successfully" });
+//   } else {
+//     res.status(404).json({ message: "Book not found" });
+//   }
+// });
 router.put("/book/:bookId", async (req, res) => {
-  const book = await Book.findByIdAndUpdate(req.params.bookId, req.body, {
-    new: true,
-  }); //mongoose function
-  if (book) {
-    res.json({ message: "Book updated successfully" });
-  } else {
-    res.status(404).json({ message: "Book not found" });
+  const bookId = req.params.bookId;
+  const updatedData = req.body;
+
+  // Check for missing or invalid fields in the updated data
+  if (!updatedData.title || !updatedData.author || !updatedData.summary) {
+    return res.status(400).json({
+      message:
+        "Invalid or missing data. Please provide title, author, and summary.",
+    });
   }
+
+  const updatedBook = await Book.findByIdAndUpdate(bookId, updatedData, {
+    new: true,
+  });
+
+  if (!updatedBook) {
+    return res.status(404).json({ message: "Book not found" });
+  }
+
+  res.json({ message: "Book updated successfully", updatedBook });
 });
 
 //delete book
