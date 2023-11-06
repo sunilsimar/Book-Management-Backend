@@ -91,3 +91,9 @@ To run this application locally, follow these steps:
 - MongoDB is used as the database for storing book data.
 - Basic validation is in place to ensure required fields (title, author, and summary) are provided in requests.
 - Error handling is included to handle cases where a book is not found or there are database connection issues.
+
+- Data Validation: The assignment specifies the need for CRUD operations, including adding and updating books. However, it doesn't explicitly state whether data validation is required. To ensure data integrity, we assumed that data validation is a fundamental aspect of these operations. This assumption led us to implement mandatory field checks for 'title,' 'author,' and 'summary' during book creation and updates.
+
+- Response Format for Error Handling: The assignment mentions the importance of handling errors but doesn't detail the desired response format. In the absence of specific instructions, we made an assumption that returning JSON-formatted error messages with appropriate HTTP status codes is a user-friendly and widely accepted approach. This choice was made to ensure clarity and ease of troubleshooting for API users.
+
+- By addressing these ambiguities and making these reasonable assumptions, we aimed to deliver a functional and user-friendly Book Management API that aligns with the assignment's objectives.
