@@ -25,16 +25,6 @@ router.post("/newbook", async (req, res) => {
 });
 
 //Update book
-// router.put("/book/:bookId", async (req, res) => {
-//   const book = await Book.findByIdAndUpdate(req.params.bookId, req.body, {
-//     new: true,
-//   }); //mongoose function
-//   if (book) {
-//     res.json({ message: "Book updated successfully" });
-//   } else {
-//     res.status(404).json({ message: "Book not found" });
-//   }
-// });
 router.put("/book/:bookId", async (req, res) => {
   const bookId = req.params.bookId;
   const updatedData = req.body;
