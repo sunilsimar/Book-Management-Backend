@@ -66,6 +66,9 @@ router.get("/books", async (req, res) => {
 router.get("/book/:bookId", async (req, res) => {
   const bookId = req.params.bookId;
   const book = await Book.findById(bookId);
+  if (!book) {
+    return res.status(404).json({ message: "Book not found" });
+  }
   res.json({ book });
 });
 
