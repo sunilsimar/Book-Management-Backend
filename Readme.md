@@ -6,7 +6,7 @@ This is a Node.js RESTful API for managing books. It provides CRUD (Create, Read
 
 ### 1. Create a New Book
 
-- **Endpoint**: `POST /api/books`
+- **Endpoint**: `POST /newbook`
 - **Description**: Add a new book to the database.
 - **Request Body**:
   ```json
@@ -20,19 +20,19 @@ This is a Node.js RESTful API for managing books. It provides CRUD (Create, Read
 
 ### 2. List All Books
 
-- **Endpoint**: `GET /api/books`
+- **Endpoint**: `GET /books`
 - **Description**: Retrieve a list of all books in the database.
 - **Response**: Returns an array of book objects.
 
 ### 3. Get Book by ID
 
-- **Endpoint**: `GET /api/books/:id`
+- **Endpoint**: `GET /book/:bookId`
 - **Description**: Retrieve details of a specific book by its ID.
 - **Response**: Returns the book with the specified ID.
 
 ### 4. Update Book
 
-- **Endpoint**: `PUT /api/books/:id`
+- **Endpoint**: `PUT /book/:bookId`
 - **Description**: Update the details of a specific book by its ID.
 - **Request Body**:
   ```json
@@ -46,7 +46,7 @@ This is a Node.js RESTful API for managing books. It provides CRUD (Create, Read
 
 ### 5. Delete Book
 
-- **Endpoint**: `DELETE /api/books/:id`
+- **Endpoint**: `DELETE /deletebook/:bookId`
 - **Description**: Delete a book by its ID.
 - **Response**: Returns a success message if the book was deleted, or an error message if the book was not found.
 
@@ -57,13 +57,13 @@ To run this application locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/book-management-api.git
+   git clone https://github.com/sunilsimar/Book-Management-Backend.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd book-management-api
+   cd server
    ```
 
 3. Install dependencies:
@@ -81,7 +81,7 @@ To run this application locally, follow these steps:
 5. Start the application:
 
    ```bash
-   npm start
+   node index.js
    ```
 
 6. The application will run on http://localhost:3000 by default.
