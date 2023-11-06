@@ -11,8 +11,6 @@ app.use("/", bookRouter);
 
 //connect to mongoose
 mongoose.connect(process.env.MONGODB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
   dbName: "Backend",
 });
 
